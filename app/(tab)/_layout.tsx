@@ -24,7 +24,9 @@ const TabLayout = () => {
                 marginHorizontal: 24,
                 borderRadius: 24,
                 backgroundColor: 'black',
-                height: 72
+                height: 72,
+                borderTopWidth: 0,
+                overflow: 'hidden'
             },
             tabBarItemStyle:{
                 paddingVertical: 10
