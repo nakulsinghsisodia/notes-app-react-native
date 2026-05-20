@@ -2,6 +2,7 @@ import "@/global.css"
 import { FlatList, Text, View,Pressable } from "react-native";
 import { SafeAreaView as RNsafeArea } from 'react-native-safe-area-context'
 import {styled} from "nativewind"
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const data:any = [
   {title:'movies watch list',content: "hp, got,etc"},
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <SafeAreaView className="flex-1 bg-gray-900">
       <FlatList data={data}
+      keyExtractor={(item,index)=>(index.toString())}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
         paddingHorizontal: 14,
@@ -40,11 +42,15 @@ export default function App() {
         </View>
       }
         renderItem={(item)=>{
+          // console.log(item);
+          
           return(
             <View className="bg-gray-800 border border-gray-600 mb-4 w-full p-4 rounded-xl flex flex-row justify-between items-center">
               <Text className="text-gray-200 text-lg">{item.item.title}</Text>
               <Pressable onPress={()=>{}}>
-                <Text className="text-white px-4 py-3 bg-red-800 rounded-2xl">Remove</Text>
+                <Text className="text-white px-4 py-3 bg-red-800 rounded-2xl">  
+                  <Ionicons name="trash" size={16} />
+                </Text>
               </Pressable>
             </View>
           )
