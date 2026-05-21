@@ -5,9 +5,9 @@ import {styled} from "nativewind"
 
 
 const SafeAreaView = styled(RNsafeArea)
-const CreateNotes = () => {
+const ShowNotes = () => {
   return (
-    <SafeAreaView className="flex-1 bg-gray-900 p-6 gap-4 pb-32">
+    <SafeAreaView edges={['bottom']} className="flex-1 bg-gray-900 p-6 pt-2 gap-4 pb-32">
       <TextInput  
         placeholder='Enter title...' 
         placeholderTextColor="gray"
@@ -30,4 +30,4 @@ const CreateNotes = () => {
   )
 }
 
-export default CreateNotes
+export default ShowNotes
