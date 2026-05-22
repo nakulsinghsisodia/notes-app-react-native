@@ -5,18 +5,19 @@ import { router } from "expo-router";
 import { styled } from "nativewind";
 import { FlatList, Pressable, Text, View } from "react-native";
 import { SafeAreaView as RNsafeArea } from "react-native-safe-area-context";
+import { useNotes } from '@/context/NotesContext'
 
 const SafeAreaView = styled(RNsafeArea);
 
 export default function App() {
 
-  
+  const {notes, deleteNote} = useNotes()
 
   return (
     <SafeAreaView className="flex-1 bg-gray-900">
 
       <FlatList
-        data={data}
+        data={notes}
 
         keyExtractor={(item) => item.id.toString()}
 
@@ -36,14 +37,17 @@ export default function App() {
 
             {data.length ? (
               <Text className="text-md text-white mb-5 mt-1 text-center">
-                Total notes: {data.length}
+                Total notes: {notes.length}
               </Text>
             ) : null}
           </View>
         }
 
-        // each note item
+        
         renderItem={({ item }) => {
+
+          console.log(item)
+          
           return (
             <View className="bg-gray-800 border border-gray-600 mb-4 w-full p-4 rounded-xl flex-row justify-between items-center">
 
@@ -63,7 +67,7 @@ export default function App() {
 
               <Pressable
                 onPress={() => {
-                  console.log("delete note");
+                  deleteNote(item.id)
                 }}
               >
                 <View className="px-4 py-3 bg-red-800 rounded-2xl">
