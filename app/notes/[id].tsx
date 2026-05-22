@@ -21,6 +21,8 @@ const ShowNotes = () => {
     if(!title.trim() || !content.trim()){
       alert("Title or content must not be empty!")
       return true
+    }else{
+      return false
     }
   }
 
