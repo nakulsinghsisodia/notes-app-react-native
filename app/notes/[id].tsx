@@ -20,9 +20,9 @@ const ShowNotes = () => {
         textAlignVertical="top"
         className="h-[80%] bg-gray-800 text-white rounded-xl p-5" />
 
-      <Pressable className="w-full bg-blue-700 py-4 rounded-xl items-center">
+      <Pressable className="w-full bg-orange-600 py-4 rounded-xl items-center">
         <Text className="text-white text-lg font-bold">
-          Save Note
+          Update note
         </Text>
       </Pressable>
 
