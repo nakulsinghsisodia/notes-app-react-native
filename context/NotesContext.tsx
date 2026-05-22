@@ -6,7 +6,7 @@ type Note = {
     content: string
 }
 
-type NoteContextType = {
+type NotesContextType = {
     notes: Note[],
 
     addNote : (
@@ -25,7 +25,7 @@ type NoteContextType = {
     ) => void
 }
 
-const NotesContext = createContext<NoteContextType | null>(null)
+const NotesContext = createContext<NotesContextType | null>(null)
 
 export const NotesProvider = ({children} : {children: ReactNode}) =>{
 
