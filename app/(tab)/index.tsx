@@ -9,6 +9,9 @@ import { SafeAreaView as RNsafeArea } from "react-native-safe-area-context";
 const SafeAreaView = styled(RNsafeArea);
 
 export default function App() {
+
+  
+
   return (
     <SafeAreaView className="flex-1 bg-gray-900">
 
