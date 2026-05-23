@@ -1,9 +1,9 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
+import { Text, TextInput, Pressable} from 'react-native'
 import React, {useState} from 'react'
 import { SafeAreaView as RNsafeArea } from 'react-native-safe-area-context'
 import {styled} from "nativewind"
 import { useNotes } from '@/context/NotesContext'
-import { Redirect, router } from 'expo-router'
+import { router } from 'expo-router'
 
 
 const SafeAreaView = styled(RNsafeArea)
@@ -29,7 +29,7 @@ const CreateNotes = () => {
         onChangeText={(text)=>setTitle(text)}
         placeholder='Enter title...' 
         placeholderTextColor="gray"
-        className='text-white bg-gray-800 rounded-xl h-15 p-4 text-lg'/>
+        className='text-white border border-gray-700 bg-gray-800 rounded-xl h-15 p-4 text-lg'/>
       
       <TextInput
         value={content}
@@ -38,7 +38,7 @@ const CreateNotes = () => {
         placeholderTextColor="gray"
         multiline
         textAlignVertical="top"
-        className="h-[80%] bg-gray-800 text-white rounded-xl p-5" />
+        className="h-[80%] bg-gray-800 border border-gray-700 text-white rounded-xl p-5" />
 
       <Pressable className="w-full bg-blue-700 py-4 rounded-xl items-center" 
         onPress={
