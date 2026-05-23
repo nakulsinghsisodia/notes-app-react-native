@@ -1,4 +1,4 @@
-import { Text, TextInput, Pressable, View } from 'react-native'
+import { Text, TextInput, Pressable} from 'react-native'
 import React, {useState} from 'react'
 import { SafeAreaView as RNsafeArea } from 'react-native-safe-area-context'
 import {styled} from "nativewind"
