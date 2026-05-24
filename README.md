@@ -1,50 +1,88 @@
-# Welcome to your Expo app 👋
+# React Native Notes App
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/nakulsinghsisodia/notes-app-react-native)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple and modern note-taking application built with React Native and Expo. This project demonstrates core mobile development concepts including state management, navigation, and styling with a utility-first approach.
 
-## Get started
+## Features
 
-1. Install dependencies
+-   **CRUD Operations:** Create, read, update, and delete notes.
+-   **Clean UI:** A sleek, dark-themed interface styled with NativeWind (Tailwind CSS for React Native).
+-   **State Management:** Centralized state management using React Context API. All notes are managed within the `NotesContext`.
+-   **File-Based Routing:** Navigation is handled by Expo Router, providing a clear and organized routing structure.
+-   **Tab Navigation:** A custom-styled bottom tab bar for easy navigation between the home screen and the note creation screen.
 
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-2. Start the app
+-   **Framework:** React Native
+-   **Platform:** Expo
+-   **Language:** TypeScript
+-   **Styling:** NativeWind & Tailwind CSS
+-   **Routing:** Expo Router
+-   **State Management:** React Context API
 
-   ```bash
-   npx expo start
-   ```
+## Getting Started
 
-In the output, you'll find options to open the app in a
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Prerequisites
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+-   Node.js (LTS version)
+-   npm or yarn
+-   Expo Go app installed on your iOS or Android device
 
-## Get a fresh project
+### Installation
 
-When you're ready, run:
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/nakulsinghsisodia/notes-app-react-native.git
+    ```
 
-```bash
-npm run reset-project
+2.  **Navigate to the project directory:**
+    ```sh
+    cd notes-app-react-native
+    ```
+
+3.  **Install the dependencies:**
+    ```sh
+    npm install
+    ```
+
+### Running the Application
+
+1.  **Start the development server:**
+    ```sh
+    npx expo start
+    ```
+
+2.  **Run the app:**
+    -   Scan the QR code displayed in the terminal with the Expo Go app on your physical device.
+    -   Alternatively, you can run it on an emulator by pressing `a` for Android or `i` for iOS in the terminal.
+
+## Project Structure
+
+The project follows a standard Expo Router structure:
+
+```
+/
+├── app/                  # Main directory for routes and screens
+│   ├── (tab)/            # Defines the tab layout and its screens
+│   │   ├── _layout.tsx   # Tab navigator configuration
+│   │   ├── create.tsx    # Screen for creating new notes
+│   │   └── index.tsx     # Home screen, lists all notes
+│   ├── notes/            # Directory for note-specific routes
+│   │   ├── [id].tsx      # Dynamic route for viewing/editing a single note
+│   │   └── _layout.tsx   # Layout for the notes stack
+│   └── _layout.tsx       # Root layout, wraps the app with providers
+├── context/              # Contains React Context for state management
+│   └── NotesContext.tsx  # State logic for creating, updating, and deleting notes
+├── constants/            # For static data and configurations
+│   ├── data.ts           # (Example data, not used in final app)
+│   └── tabs.ts           # Configuration for bottom tabs
+└── ...                   # Other configuration files (babel, postcss, etc.)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Core Functionality
 
-## Learn more
+The application's state is managed through `NotesContext.tsx`. This context provides functions (`addNote`, `updateNote`, `deleteNote`) and the `notes` array to all components wrapped within its provider.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Note:** The current implementation uses `useState` within the context, which means the notes are stored in memory and will be cleared when the app is restarted. For persistence, `AsyncStorage` or a similar solution would need to be integrated into the context.
