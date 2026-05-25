@@ -67,8 +67,6 @@ export default function App() {
 
         renderItem={({ item }) => {
 
-          console.log(item)
-
           return (
             <View className="bg-gray-800 border border-gray-700 mb-4 w-full p-4 rounded-xl flex-row justify-between items-center">
 
