@@ -1,6 +1,5 @@
 # React Native Notes App
 
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/nakulsinghsisodia/notes-app-react-native)
 
 A simple and modern note-taking application built with React Native and Expo. This project demonstrates core mobile development concepts including state management, navigation, styling, and local database integration using SQLite.
 
@@ -137,10 +136,9 @@ Example table structure:
 
 ```sql
 CREATE TABLE IF NOT EXISTS notes (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  id INTEGER PRIMARY KEY,
   title TEXT NOT NULL,
-  content TEXT NOT NULL,
-  created_at TEXT DEFAULT CURRENT_TIMESTAMP
+  content TEXT NOT NULL
 );
 ```
 
