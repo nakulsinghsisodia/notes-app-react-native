@@ -105,7 +105,7 @@ npx expo start
 │   └── sqlite.ts         # SQLite database configuration
 │
 ├── constants/
-│   ├── tabs.ts
+│   └── tabs.ts
 │  
 │
 └── ...
