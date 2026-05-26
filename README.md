@@ -101,8 +101,6 @@ npx expo start
 ├── context/
 │   └── NotesContext.tsx  # Notes state & database operations
 │
-├── database/
-│   └── sqlite.ts         # SQLite database configuration
 │
 ├── constants/
 │   └── tabs.ts
